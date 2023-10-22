@@ -4,6 +4,7 @@
       setTimeout(function() {
         window.$crisp = [];
         window.CRISP_WEBSITE_ID = "{{ .crisp_website_id }}";
+        window.CRISP_COOKIE_EXPIRE = 7200; // Expire time in seconds: 2 hours = 7200 seconds
         (function() {
           d = document;
           s = d.createElement("script");
@@ -11,7 +12,7 @@
           s.async = 1;
           d.getElementsByTagName("head")[0].appendChild(s);
         })();
-      }, 4500); // 4-second delay (4500 milliseconds)
+      }, 4000); // 4-second delay (4000 milliseconds)
     </script>
   {{ end }}
 {{ end }}
