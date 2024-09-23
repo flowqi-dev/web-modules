@@ -1,7 +1,5 @@
 {{ with site.Params.matomo }}
   {{ if .enable }}
-<p>Language: "{{ .Site.Language.Lang }}"</p>
-
     <script type="text/javascript">
       setTimeout(function () {
         var _paq = window._paq = window._paq || [];
@@ -9,7 +7,7 @@
         _paq.push(['enableLinkTracking']);
         
         // Set the custom dimension for language
-        _paq.push(['setCustomDimension', 1, '{{ .Site.Language.Lang | safeJS }}']);
+        _paq.push(['setCustomDimension', 1, '{{ .Lang | safeJS }}']);
 
         (function () {
           var u = "{{ .url | safeURL }}";
@@ -27,3 +25,4 @@
     </script>
   {{ end }}
 {{ end }}
+
