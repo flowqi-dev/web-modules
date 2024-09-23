@@ -5,10 +5,14 @@
         var _paq = window._paq = window._paq || [];
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
+        
+        // Set the custom dimension for language
+        _paq.push(['setCustomDimension', 1, '{{ .Language.Lang }}']);
+
         (function () {
-          var u = "{{.url|safeURL}}";
+          var u = "{{ .url | safeURL }}";
           _paq.push(['setTrackerUrl', u + 'matomo.php']);
-          _paq.push(['setSiteId', '{{.id}}']);
+          _paq.push(['setSiteId', '{{ .id }}']);
           var d = document,
             g = d.createElement('script'),
             s = d.getElementsByTagName('script')[0];
