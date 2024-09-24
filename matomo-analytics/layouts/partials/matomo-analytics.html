@@ -6,8 +6,8 @@
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         
-        // Set the custom dimension for language
-        _paq.push(['setCustomDimension', 1, '{{ .Lang | safeJS }}']);
+        // Custom dimension for language
+        _paq.push(['setCustomDimension', 1, '{{ site.Language.Lang }}']);
 
         (function () {
           var u = "{{ .url | safeURL }}";
@@ -21,8 +21,9 @@
           g.src = u + 'matomo.js';
           s.parentNode.insertBefore(g, s);
         })();
-      }, 4000); // 4000 milliseconds (4 seconds)
+      }, 3000); // 3000 milliseconds (3 seconds)
     </script>
   {{ end }}
 {{ end }}
+
 
