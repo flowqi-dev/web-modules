@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/seo-tools/basic-seo
+module github.com/flowqi-dev/web-modules/seo-tools/basic-seo
 
 go 1.19
