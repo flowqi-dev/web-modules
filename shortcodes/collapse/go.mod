@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/shortcodes/collapse
+module github.com/flowqi-dev/web-modules/shortcodes/collapse
 
 go 1.19

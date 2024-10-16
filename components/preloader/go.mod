@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/components/preloader
+module github.com/flowqi-dev/web-modules/components/preloader
 
 go 1.19

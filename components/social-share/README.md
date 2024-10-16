@@ -6,7 +6,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/components/social-share"
+path = "github.com/flowqi-dev/web-modules/components/social-share"
 ```
 
 Add the following code to your `assets/scss/main.scss` or `assets/scss/style.scss` file.

@@ -4,28 +4,28 @@ extended = true
 
 # button
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/buttons"
+path = "github.com/flowqi-dev/web-modules/shortcodes/buttons"
 [[imports.mounts]]
 source = "buttons/layouts/shortcodes"
 target = "layouts/shortcodes"
 
 # codepen
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/codepen"
+path = "github.com/flowqi-dev/web-modules/shortcodes/codepen"
 [[imports.mounts]]
 source = "codepen/layouts/shortcodes"
 target = "layouts/shortcodes"
 
 # collapse
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/collapse"
+path = "github.com/flowqi-dev/web-modules/shortcodes/collapse"
 [[imports.mounts]]
 source = "collapse/layouts/shortcodes"
 target = "layouts/shortcodes"
 
 # notice
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/notice"
+path = "github.com/flowqi-dev/web-modules/shortcodes/notice"
 [[imports.mounts]]
 source = "notice/layouts/shortcodes"
 target = "layouts/shortcodes"
@@ -35,14 +35,14 @@ target = "assets/scss"
 
 # video
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/video"
+path = "github.com/flowqi-dev/web-modules/shortcodes/video"
 [[imports.mounts]]
 source = "video/layouts/shortcodes"
 target = "layouts/shortcodes"
 
 # tabs
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/tabs"
+path = "github.com/flowqi-dev/web-modules/shortcodes/tabs"
 [[imports.mounts]]
 source = "tabs/layouts/shortcodes"
 target = "layouts/shortcodes"
@@ -52,7 +52,7 @@ target = "assets/scss"
 
 # image
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/image"
+path = "github.com/flowqi-dev/web-modules/shortcodes/image"
 [[imports.mounts]]
 source = "image/layouts/shortcodes"
 target = "layouts/shortcodes"
@@ -62,7 +62,7 @@ target = "assets/scss"
 
 # gallery
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/gallery"
+path = "github.com/flowqi-dev/web-modules/shortcodes/gallery"
 [[imports.mounts]]
 source = "gallery/layouts/shortcodes"
 target = "layouts/shortcodes"

@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/components/render-link
+module github.com/flowqi-dev/web-modules/components/render-link
 
 go 1.19

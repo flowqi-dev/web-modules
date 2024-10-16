@@ -1,12 +1,12 @@
 # Bootstrap Accordion/Collapse Shortcode (DEPRECATED)
 
-use this new version instead <https://github.com/flowqi-dev/hugo-modules/tree/master/accordion>
+use this new version instead <https://github.com/flowqi-dev/web-modules/tree/master/accordion>
 
 Add the following code to your module list in the `config/_default/module.toml` file.
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/collapse"
+path = "github.com/flowqi-dev/web-modules/shortcodes/collapse"
 ```
 
 Add the following code to your `assets/scss/main.scss` or `assets/scss/style.scss` file.

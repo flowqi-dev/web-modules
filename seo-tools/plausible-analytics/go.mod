@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/seo-tools/plausible-analytics
+module github.com/flowqi-dev/web-modules/seo-tools/plausible-analytics
 
 go 1.19

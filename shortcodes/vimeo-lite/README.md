@@ -1,6 +1,6 @@
 # Vimeo Lite Shortcode (DEPRECATED)
 
-use this new version instead <https://github.com/flowqi-dev/hugo-modules/tree/master/videos>
+use this new version instead <https://github.com/flowqi-dev/web-modules/tree/master/videos>
 
 ## Installation
 
@@ -8,7 +8,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/vimeo-lite"
+path = "github.com/flowqi-dev/web-modules/shortcodes/vimeo-lite"
 ```
 
 <hr>

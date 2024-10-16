@@ -1,6 +1,6 @@
 # Gallery and Slider Shortcode (DEPRECATED)
 
-use this new version instead <https://github.com/flowqi-dev/hugo-modules/tree/master/gallery-slider>
+use this new version instead <https://github.com/flowqi-dev/web-modules/tree/master/gallery-slider>
 
 ## Install Module
 
@@ -8,7 +8,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/gallery"
+path = "github.com/flowqi-dev/web-modules/shortcodes/gallery"
 ```
 
 Add the following code to your js plugins list in the `config.toml` file.

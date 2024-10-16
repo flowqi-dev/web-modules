@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/shortcodes/codepen
+module github.com/flowqi-dev/web-modules/shortcodes/codepen
 
 go 1.19

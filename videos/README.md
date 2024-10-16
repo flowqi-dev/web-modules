@@ -1,8 +1,8 @@
 # Video Modules
 
-- Local or Remote video - [Read ↆ](https://github.com/flowqi-dev/hugo-modules/tree/master/videos#localremote-video)
-- Youtube Video [Read ↆ](https://github.com/flowqi-dev/hugo-modules/tree/master/videos#youtube-video-lite-and-fast)
-- Vimeo Video [Read ↆ](https://github.com/flowqi-dev/hugo-modules/tree/master/videos#vimeo-video-lite-and-fast)
+- Local or Remote video - [Read ↆ](https://github.com/flowqi-dev/web-modules/tree/master/videos#localremote-video)
+- Youtube Video [Read ↆ](https://github.com/flowqi-dev/web-modules/tree/master/videos#youtube-video-lite-and-fast)
+- Vimeo Video [Read ↆ](https://github.com/flowqi-dev/web-modules/tree/master/videos#vimeo-video-lite-and-fast)
 
 ## Installation
 
@@ -10,7 +10,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/videos"
+path = "github.com/flowqi-dev/web-modules/videos"
 ```
 
 <hr>

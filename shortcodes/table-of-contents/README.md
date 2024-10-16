@@ -1,6 +1,6 @@
 # Table Of Contents Shortcode (DEPRECATED)
 
-use this new version instead <https://github.com/flowqi-dev/hugo-modules/tree/master/table-of-contents>
+use this new version instead <https://github.com/flowqi-dev/web-modules/tree/master/table-of-contents>
 
 ## Install Module
 
@@ -8,7 +8,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/table-of-contents"
+path = "github.com/flowqi-dev/web-modules/shortcodes/table-of-contents"
 ```
 
 Add the following code to your `assets/scss/main.scss` or `assets/scss/style.scss` file.

@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/gzip-caching
+module github.com/flowqi-dev/web-modules/gzip-caching
 
 go 1.19

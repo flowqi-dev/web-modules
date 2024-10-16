@@ -1,6 +1,6 @@
 # Custom Video Shortcode (DEPRECATED)
 
-use this new version instead <https://github.com/flowqi-dev/hugo-modules/tree/master/videos>
+use this new version instead <https://github.com/flowqi-dev/web-modules/tree/master/videos>
 
 ## Install Module
 
@@ -8,7 +8,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/video"
+path = "github.com/flowqi-dev/web-modules/shortcodes/video"
 ```
 
 <hr>

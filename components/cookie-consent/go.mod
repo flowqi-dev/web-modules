@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/components/cookie-consent
+module github.com/flowqi-dev/web-modules/components/cookie-consent
 
 go 1.19

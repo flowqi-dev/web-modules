@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/shortcodes/button
+module github.com/flowqi-dev/web-modules/shortcodes/button
 
 go 1.20

@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/shortcodes/cloak-contact
+module github.com/flowqi-dev/web-modules/shortcodes/cloak-contact
 
 go 1.20

@@ -6,7 +6,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/icons/font-awesome"
+path = "github.com/flowqi-dev/web-modules/icons/font-awesome"
 ```
 
 Add the following code to your CSS plugins list in the `config.toml` file.

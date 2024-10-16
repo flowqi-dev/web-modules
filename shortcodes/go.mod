@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/shortcodes
+module github.com/flowqi-dev/web-modules/shortcodes
 
 go 1.19

@@ -1,3 +1,3 @@
-module github.com/flowqi-dev/hugo-modules/table-of-contents
+module github.com/flowqi-dev/web-modules/table-of-contents
 
 go 1.20

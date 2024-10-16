@@ -6,7 +6,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/flowqi-dev/hugo-modules/shortcodes/button"
+path = "github.com/flowqi-dev/web-modules/shortcodes/button"
 ```
 
 > Note: Button style comes from your existing `button.scss` files. If you don't have this file, you can add the following css to your main css file.
