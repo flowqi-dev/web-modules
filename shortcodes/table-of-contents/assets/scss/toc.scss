@@ -10,23 +10,19 @@
     cursor: pointer;
   }
 
-  nav {
+  #TableOfContents {
     padding: 10px;
     background-color: #f7f7f7;
 
     ol {
-      list-style: none;
-      counter-reset: section; // Reset numbering for top-level items
+      list-style: none; 
+      padding-left: 1.5rem;
 
       li {
         position: relative;
 
         &::before {
-          content: counter(section) ". "; // Number top-level items
-          counter-increment: section;
-          position: absolute;
-          left: -1.5rem;
-          font-weight: bold;
+          content: none;
         }
 
         a {
@@ -37,12 +33,21 @@
             text-decoration: underline;
           }
         }
+
+        // Sub-items
+        ol {
+          padding-left: 1.5rem;
+
+          li::before {
+            content: none;
+          }
+        }
       }
     }
   }
 
   // Dark mode styling
-  .dark nav {
+  .dark #TableOfContents {
     background-color: #333;
 
     li,

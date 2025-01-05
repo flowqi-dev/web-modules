@@ -1,21 +1,7 @@
 <details class="table-of-content" open="">
   <summary>{{ with i18n "toc" }}{{ . }}{{ else }}Table Of Contents{{ end }}</summary>
-  <nav id="TableOfContents">
-    <ol>
-      <li>
-        <a href="#intro">
-          {{ with i18n "toc_intro" }}{{ . }}{{ else }}Introduction{{ end }}
-        </a>
-      </li>
-
-      {{ $toc := .Page.TableOfContents | safeHTML }}
-      {{ range $heading := (findRE "<li><a href=.*?>.*?</a></li>" $toc) }}
-        {{ if (findRE "h2" $heading) }}
-          {{ $heading | safeHTML }}
-        {{ end }}
-      {{ end }}
-    </ol>
-  </nav>
+  {{ .Page.TableOfContents | safeHTML }}
 </details>
+
 
 
