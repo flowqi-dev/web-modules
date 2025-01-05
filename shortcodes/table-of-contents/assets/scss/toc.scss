@@ -1,4 +1,3 @@
-// Table-of-content styling
 .table-of-content {
   margin: 1rem 0 1.5rem;
 
@@ -11,29 +10,28 @@
   }
 
   ul {
-    list-style: none;
+    counter-reset: section; // Reset the counter for the top-level list
+    list-style: none; // Remove default list styling
     padding-left: 1.5rem;
 
     li {
       position: relative;
 
-      &::before {
-        content: none;
+      // Top-level items (numbered)
+      &:not(:has(ul))::before {
+        content: counter(section) ". "; // Use numbering for top-level items
+        counter-increment: section;
+        position: absolute;
+        left: -1.5rem; // Adjust positioning
+        font-weight: bold;
       }
 
-      ul {
-        list-style: none;
-        padding-left: 1.5rem;
-
-        li {
-          position: relative;
-
-          &::before {
-            content: "- ";
-            position: absolute;
-            left: -1.5rem;
-          }
-        }
+      // Sub-items (with dash)
+      ul li::before {
+        content: "- "; // Replace numbers with a dash for sub-items
+        position: absolute;
+        left: -1.5rem;
+        font-weight: normal;
       }
     }
   }
@@ -55,19 +53,9 @@
       }
     }
   }
-}
 
-.content {
-  .table-of-content {
-    ul li,
-    ol li {
-      margin-bottom: 6px !important;
-    }
-  }
-}
-
-.dark {
-  #TableOfContents {
+  // Dark mode styling
+  .dark #TableOfContents {
     background-color: #333;
 
     li,
@@ -76,4 +64,5 @@
     }
   }
 }
+
 
