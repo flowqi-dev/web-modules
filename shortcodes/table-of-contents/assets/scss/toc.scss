@@ -7,60 +7,42 @@
     background-color: #555;
     padding: 5px 20px;
     margin-bottom: 0 !important;
+    cursor: pointer;
   }
 
-  ul {
-    counter-reset: section; // Reset numbering at the start
-    list-style: none; // Remove default list styling
-    padding-left: 1.5rem;
+  nav {
+    padding: 10px;
+    background-color: #f7f7f7;
 
-    li {
-      position: relative;
+    ol {
+      list-style: none;
+      counter-reset: section; // Reset numbering for top-level items
 
-      // Top-level items (numbered, starting with "1.")
-      &::before {
-        content: counter(section) ". "; // Add numbering
-        counter-increment: section; // Increment the counter
-        position: absolute;
-        left: -1.5rem;
-        font-weight: bold;
-      }
+      li {
+        position: relative;
 
-      // Sub-items (use a dash)
-      ul {
-        list-style: none;
-        padding-left: 1.5rem;
-
-        li::before {
-          content: "- "; // Replace numbers with a dash for sub-items
+        &::before {
+          content: counter(section) ". "; // Number top-level items
+          counter-increment: section;
           position: absolute;
           left: -1.5rem;
-          font-weight: normal;
+          font-weight: bold;
+        }
+
+        a {
+          color: #333 !important;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
   }
 
-  #TableOfContents {
-    padding: 10px;
-    background-color: #f7f7f7;
-
-    li,
-    a {
-      color: #333 !important;
-    }
-
-    a {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
   // Dark mode styling
-  .dark #TableOfContents {
+  .dark nav {
     background-color: #333;
 
     li,

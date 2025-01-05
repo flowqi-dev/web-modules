@@ -2,11 +2,23 @@
   <summary>{{ with i18n "toc" }}{{ . }}{{ else }}Table Of Contents{{ end }}</summary>
   <nav id="TableOfContents">
     <ol>
+
       <li>
         <a href="#intro">
           {{ with i18n "toc_intro" }}{{ . }}{{ else }}Introduction{{ end }}
         </a>
       </li>
-      {{ .Page.TableOfContents | safeHTML }}
+
+      {{ $toc := .Page.TableOfContents | safeHTML }}
+      {{ $doc := transform.Unmarshal $toc "html" }}
+      {{ range $doc }}
+        {{ if eq .Level 2 }} 
+          <li>
+            <a href="{{ .URL }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ol>
   </nav>
 </details>
+
