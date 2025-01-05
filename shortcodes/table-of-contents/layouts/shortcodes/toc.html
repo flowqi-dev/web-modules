@@ -1,13 +1,12 @@
-<details class="table-of-content">
+<details class="table-of-content" open="">
   <summary>{{ with i18n "toc" }}{{ . }}{{ else }}Table Of Contents{{ end }}</summary>
-  <ul>
-    {{ with .Page.Params.intro }}
+  <nav id="TableOfContents">
+    <ol>
       <li>
         <a href="#intro">
           {{ with i18n "toc_intro" }}{{ . }}{{ else }}Introduction{{ end }}
         </a>
       </li>
-    {{ end }}
-    {{ .Page.TableOfContents }}
-  </ul>
+      {{ .Page.TableOfContents | safeHTML }}
+  </nav>
 </details>
