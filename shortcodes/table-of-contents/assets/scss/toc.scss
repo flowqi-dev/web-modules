@@ -1,6 +1,7 @@
-// table-of-content
+// Table-of-content styling
 .table-of-content {
   margin: 1rem 0 1.5rem;
+
   summary {
     font-size: 18px;
     color: $white;
@@ -8,26 +9,54 @@
     padding: 5px 20px;
     margin-bottom: 0 !important;
   }
+
   ul {
-    li::before {
-      display: none;
+    list-style: none;
+    padding-left: 1.5rem;
+
+    li {
+      position: relative;
+
+      &::before {
+        content: none;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 1.5rem;
+
+        li {
+          position: relative;
+
+          &::before {
+            content: "- ";
+            position: absolute;
+            left: -1.5rem;
+          }
+        }
+      }
     }
   }
+
   #TableOfContents {
     padding: 10px;
     background-color: #f7f7f7;
+
     li,
     a {
       color: #333 !important;
     }
+
     a {
       text-decoration: none;
+
       &:hover {
         text-decoration: underline;
       }
     }
   }
 }
+
 .content {
   .table-of-content {
     ul li,
@@ -40,9 +69,11 @@
 .dark {
   #TableOfContents {
     background-color: #333;
+
     li,
     a {
       color: #fff !important;
     }
   }
 }
+
