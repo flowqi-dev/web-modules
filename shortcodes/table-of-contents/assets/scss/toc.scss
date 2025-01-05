@@ -10,28 +10,33 @@
   }
 
   ul {
-    counter-reset: section; // Reset the counter for the top-level list
+    counter-reset: section; // Reset numbering at the start
     list-style: none; // Remove default list styling
     padding-left: 1.5rem;
 
     li {
       position: relative;
 
-      // Top-level items (numbered)
-      &:not(:has(ul))::before {
-        content: counter(section) ". "; // Use numbering for top-level items
-        counter-increment: section;
+      // Top-level items (numbered, starting with "1.")
+      &::before {
+        content: counter(section) ". "; // Add numbering
+        counter-increment: section; // Increment the counter
         position: absolute;
-        left: -1.5rem; // Adjust positioning
+        left: -1.5rem;
         font-weight: bold;
       }
 
-      // Sub-items (with dash)
-      ul li::before {
-        content: "- "; // Replace numbers with a dash for sub-items
-        position: absolute;
-        left: -1.5rem;
-        font-weight: normal;
+      // Sub-items (use a dash)
+      ul {
+        list-style: none;
+        padding-left: 1.5rem;
+
+        li::before {
+          content: "- "; // Replace numbers with a dash for sub-items
+          position: absolute;
+          left: -1.5rem;
+          font-weight: normal;
+        }
       }
     }
   }
