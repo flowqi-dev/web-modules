@@ -5,7 +5,7 @@
 {{ else }}
   {{ $scratch.Set "openAttr" "" }}
 {{ end }}
-<details {{ $scratch.Get "openAttr" | safeHTMLAttr }} class="table-of-content def {{$class}}">
+<details {{ $scratch.Get "openAttr" | safeHTMLAttr }} class="table-of-content {{$class}}">
   <summary>
     {{ with i18n "toc" }}
       {{ . }}
