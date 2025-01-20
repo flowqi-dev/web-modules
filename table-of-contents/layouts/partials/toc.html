@@ -1,6 +1,6 @@
 {{ $class:= .Class }}
 {{ $scratch := newScratch }}
-{{ if not (.Collapsed | default false) }} 
+{{ if not (.Collapsed | default true) }} 
   {{ $scratch.Set "openAttr" "open" }}
 {{ else }}
   {{ $scratch.Set "openAttr" "" }}
