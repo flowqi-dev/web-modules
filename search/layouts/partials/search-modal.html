@@ -1,6 +1,7 @@
 {{ $class:= .Class }}
 {{ $context:= .Context }}
 {{ $permalink:= $context.RelPermalink }}
+{{ $inputClass := .InputClass | default "" }}
 
 {{ with site.Params.search }}
   {{ if .enable }}
@@ -44,6 +45,7 @@
           <input
             id="search-modal-input"
             type="text"
+            class="search-input {{ $inputClass }}"
             data-search-input
             autocomplete="off"
             aria-label="Search"

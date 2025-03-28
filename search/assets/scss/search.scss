@@ -1,3 +1,18 @@
+// Framework-agnostic variables
+:root {
+  --search-primary-color: #7f0ec6;
+  --search-border-color: #ddd;
+  --search-border-radius: 4px;
+  --search-background-color: #fff;
+  --search-font-color: #333;
+  --search-hover-color: var(--search-primary-color);
+  --search-hover-text-color: #fff;
+  --search-input-height: 52px;
+  --search-padding: 15px;
+  --search-item-spacing: 4px;
+  --search-taxonomy-color: #999;
+}
+
 .search-wrapper {
   position: relative;
   z-index: 1;
@@ -14,16 +29,16 @@
 }
 
 .search-wrapper-header input {
-  border: 1px solid #ddd;
+  border: 1px solid var(--search-border-color);
   width: 100%;
-  border-radius: 4px;
-  height: 52px;
-  padding: 0 15px 0 40px;
+  border-radius: var(--search-border-radius);
+  height: var(--search-input-height);
+  padding: 0 var(--search-padding) 0 40px;
   transition: 0.25s;
 }
 
 .search-wrapper-header input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-primary, var(--search-primary-color));
   box-shadow: none;
   outline: none;
 }
@@ -77,11 +92,11 @@
   position: relative;
   display: block;
   padding: 16px;
-  border-radius: 4px;
-  border: 1px solid #eee;
-  background-color: #fff;
+  border-radius: var(--search-border-radius);
+  border: 1px solid var(--search-border-color);
+  background-color: var(--search-background-color);
   transition: 0s;
-  margin-bottom: 4px;
+  margin-bottom: var(--search-item-spacing);
   display: flex;
   align-items: flex-start;
 }
@@ -119,13 +134,13 @@
 .search-result-item:focus,
 .search-result-item.search-item-selected,
 .search-result-item:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary, var(--search-primary-color));
 }
 
 .search-result-item:focus *,
 .search-result-item.search-item-selected *,
 .search-result-item:hover * {
-  color: white;
+  color: var(--search-hover-text-color);
 }
 .search-result-item:focus mark,
 .search-result-item.search-item-selected mark,
@@ -135,7 +150,7 @@
 }
 
 .search-result-item [data-result-item] u {
-  color: var(--color-primary);
+  color: var(--color-primary, var(--search-primary-color));
 }
 
 .search-result-item .hidden {
@@ -153,7 +168,7 @@
 .search-result-item-title {
   transition: 0s;
   font-size: 18px;
-  color: black;
+  color: var(--search-font-color);
   margin-bottom: 0;
   line-height: 1.35;
   font-weight: bold;
@@ -196,7 +211,7 @@
 
 .search-result-item-taxonomies > div {
   margin-right: 12px;
-  color: #999;
+  color: var(--search-taxonomy-color, #999);
 }
 
 .search-result-item-taxonomies > div svg {

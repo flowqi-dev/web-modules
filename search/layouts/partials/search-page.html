@@ -1,6 +1,7 @@
 {{ $class:= .Class }}
 {{ $context:= .Context }}
 {{ $permalink:= $context.RelPermalink }}
+{{ $inputClass := .InputClass | default "" }}
 
 {{ with site.Params.search }}
   {{ if .enable }}
@@ -44,7 +45,7 @@
           <input
             id="search-input"
             type="text"
-            class="!px-4"
+            class="search-input {{ $inputClass }}"
             data-search-input
             placeholder="{{ i18n `search_input_placeholder` | default .input_placeholder }}"
             aria-label="Search"

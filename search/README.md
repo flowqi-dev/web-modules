@@ -64,6 +64,46 @@ show_tags = true
 show_categories = true
 ```
 
+### Framework Compatibility
+
+The search module is designed to be framework-agnostic and works with any CSS framework (Bootstrap, Tailwind, etc.). You can customize the appearance by passing additional parameters to the partials:
+
+```html
+{{ partial "search-modal.html" (dict "Context" . "Class" "your-custom-class" "InputClass" "your-framework-specific-input-class") }}
+```
+
+For Bootstrap, you might use:
+```html
+{{ partial "search-modal.html" (dict "Context" . "Class" "mt-3" "InputClass" "form-control") }}
+```
+
+For Tailwind, you might use:
+```html
+{{ partial "search-modal.html" (dict "Context" . "Class" "mt-3" "InputClass" "px-4 py-2 border border-gray-300 rounded-md") }}
+```
+
+#### CSS Variable Customization
+
+The search module uses CSS variables for styling, which you can override in your site's CSS to match your theme without modifying the module:
+
+```css
+:root {
+  --search-primary-color: #your-primary-color;
+  --search-border-color: #your-border-color;
+  --search-border-radius: 4px;
+  --search-background-color: #your-bg-color;
+  --search-font-color: #your-text-color;
+  --search-hover-color: #your-hover-bg-color;
+  --search-hover-text-color: #your-hover-text-color;
+  --search-input-height: 52px;
+  --search-padding: 15px;
+  --search-item-spacing: 4px;
+  --search-taxonomy-color: #your-taxonomy-color;
+}
+```
+
+This allows for seamless integration with different design systems and CSS frameworks.
+
 ### i18n Translation
 
 Add the following translations to your `i18n/*.yaml` files if you use multi-language on your site.
