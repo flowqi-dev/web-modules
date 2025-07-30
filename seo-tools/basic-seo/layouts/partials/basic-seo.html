@@ -122,25 +122,45 @@
       {{ .Scratch.Set "image-exists" (resources.Get $imagePath) }}
     {{ end }}
 
-    {{ $image:= .Scratch.Get "image-exists" }}
-    {{ $imageExt:= path.Ext $image }}
+    {{ $image := .Scratch.Get "image-exists" }}
+    {{ $imageExt := path.Ext $image }}
 
     <!-- If not SVG  -->
     {{ if ne $imageExt `.svg` }}
       {{ $imageWidth := $image.Width }}
       {{ $imageHeight := $image.Height }}
-      {{ if (and (gt $imageWidth 144) (gt $imageHeight 144)) }}
+      
+      <!-- Only optimize images for blog, glossary and news -->
+      {{ if or (eq .Type "blog") (eq .Type "glossary") (eq .Type "news") }}
+        {{ $socialImage := $image }}
+        {{ if gt $imageWidth 1200 }}
+          {{ $socialImage = $image.Resize "1200x" }}
+        {{ end }}
+        
+        {{ $aspectRatio := div (float $socialImage.Height) $socialImage.Width }}
+        {{ if gt $aspectRatio 0.6 }}
+          {{ $socialImage = $image.Fill "1200x630 Center" }}
+        {{ end }}
+        
+        <meta property="og:image" content="{{ $socialImage.Permalink }}" />
+        <meta name="twitter:image" content="{{ $socialImage.Permalink }}" />
+        <meta property="og:image:width" content="{{ $socialImage.Width }}" />
+        <meta property="og:image:height" content="{{ $socialImage.Height }}" />
+        <meta name="twitter:card" content="summary_large_image" />
+        {{ with $.Params.image_description }}
+        <meta property="og:image:alt" content="{{ . }}" />
+        {{ end }}
+      {{ else }}
+        <!-- For all other page types, use original image dimensions -->
         <meta property="og:image" content="{{ $image.Permalink }}" />
         <meta name="twitter:image" content="{{ $image.Permalink }}" />
-        <meta
-          name="twitter:card"
-          content="{{- if (and (gt $imageWidth 300) (gt $imageHeight 157) (not (eq $imageWidth $imageHeight))) -}}summary_large_image{{- else -}}summary{{- end -}}" />
+        <meta property="og:image:width" content="{{ $imageWidth }}" />
+        <meta property="og:image:height" content="{{ $imageHeight }}" />
+        <meta name="twitter:card" content="{{- if (and (gt $imageWidth 300) (gt $imageHeight 157) (not (eq $imageWidth $imageHeight))) -}}summary_large_image{{- else -}}summary{{- end -}}" />
         {{ with $.Params.image_description }}
         <meta property="og:image:alt" content="{{ . }}" />
         {{ end }}
       {{ end }}
-      <meta property="og:image:width" content="{{ $imageWidth }}" />
-      <meta property="og:image:height" content="{{ $imageHeight }}" />
     {{ end }}
 
     <meta
