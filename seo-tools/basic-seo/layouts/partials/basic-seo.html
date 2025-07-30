@@ -40,13 +40,25 @@
 
 <!-- Add translations if they exist -->
 {{ if .IsTranslated }}
-  {{ range .Translations }}
+  {{ $hasEnglish := false }}
+  {{ range .AllTranslations }}
     {{ if eq .Language.Lang "en" }}
       <link rel="alternate" hreflang="en" href="{{ .Permalink }}" />
-      <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+      {{ $hasEnglish = true }}
     {{ else }}
       <link rel="alternate" hreflang="{{ .Language.Lang }}-{{ upper .Language.Params.region }}" href="{{ .Permalink }}" />
     {{ end }}
+  {{ end }}
+
+  <!-- x-default: English if available, current language if not -->
+  {{ if $hasEnglish }}
+    {{ range .AllTranslations }}
+      {{ if eq .Language.Lang "en" }}
+        <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
   {{ end }}
 {{ end }}
 
