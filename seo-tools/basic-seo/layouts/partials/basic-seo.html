@@ -31,35 +31,31 @@
 {{ end }}
 
 <!-- multilingual SEO optimizations -->
-<!-- Always output current language hreflang -->
-{{ if eq .Language.Lang "en" }}
-  <link rel="alternate" hreflang="en" href="{{ .Permalink }}" />
-{{ else }}
-  <link rel="alternate" hreflang="{{ .Language.Lang }}-{{ upper .Language.Params.region }}" href="{{ .Permalink }}" />
+{{ $hasEnglish := false }}
+{{ range .AllTranslations }}
+  {{ if eq .Language.Lang "en" }}
+    <link rel="alternate" hreflang="en" href="{{ .Permalink }}" />
+    {{ $hasEnglish = true }}
+  {{ else }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}-{{ upper .Language.Params.region }}" href="{{ .Permalink }}" />
+  {{ end }}
 {{ end }}
 
-<!-- Add translations if they exist -->
-{{ if .IsTranslated }}
-  {{ $hasEnglish := false }}
+<!-- Add current page if not already added -->
+{{ if and (eq .Language.Lang "en") (not $hasEnglish) }}
+  <link rel="alternate" hreflang="en" href="{{ .Permalink }}" />
+  {{ $hasEnglish = true }}
+{{ end }}
+
+<!-- x-default: English if available, current language if not -->
+{{ if $hasEnglish }}
   {{ range .AllTranslations }}
     {{ if eq .Language.Lang "en" }}
-      <link rel="alternate" hreflang="en" href="{{ .Permalink }}" />
-      {{ $hasEnglish = true }}
-    {{ else }}
-      <link rel="alternate" hreflang="{{ .Language.Lang }}-{{ upper .Language.Params.region }}" href="{{ .Permalink }}" />
+      <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
     {{ end }}
   {{ end }}
-
-  <!-- x-default: English if available, current language if not -->
-  {{ if $hasEnglish }}
-    {{ range .AllTranslations }}
-      {{ if eq .Language.Lang "en" }}
-        <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
-      {{ end }}
-    {{ end }}
-  {{ else }}
-    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
-  {{ end }}
+{{ else }}
+  <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
 {{ end }}
 
 <!-- Language locale meta -->
